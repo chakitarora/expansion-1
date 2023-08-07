@@ -3,7 +3,7 @@
 Welcome to the EXPANSION Complementary Repository!
 
 Explore the functional implications of protein-coding alternative splice variants with [EXPANSION](https://expansion.bioinfolab.sns.it/), an integrated web-server designed to unravel the impact of alternative splicing in cancer genomics. This repository houses the data, scripts, and resources supporting the research paper. Combined with DE protein-coding transcripts, domain analysis, protein interactions, and gene enrichment, EXPANSION offers an intuitive glimpse into the effects of splice variants. Dive into Ensembl transcripts, Interpro domains, PTMs, and more, to uncover functionally significant splicing events. Analyze pre-calculated or custom DE transcript datasets effortlessly, accelerating your journey to gain insights into protein spliceforms.
-
+![expansion_workflow_about.svg](https://github.com/raimondilab/expansion/blob/main/expansion_workflow_about.svg)
 ## Structure of this Repository
 There are two main folders: 
 
@@ -55,4 +55,4 @@ The .hmm file is a Hidden Markov Model file that is used by ClustalO to perform 
 
 **9. tx_ebseq.R:** This script conducts transcriptomic analysis through the EBSeq package in R, focusing on differential expression analysis between two conditions: GTEX and TCGA. Input gene expression data in CSV format is processed (/data/tx_count_data/), utilizing Ensembl database annotations for mapping transcript IDs to gene symbols. The outcomes encompassing differential expression results, fold changes, and annotation details are saved in separate CSV output files. For execution, the script requires a command-line argument specifying the cancer type of interest, and the gene expression data must be in the input directory, while the output files will be generated in the designated output directory. In the absence of a specified cancer type, the script defaults to performing an analysis example for the 'Colon' cancer type.
 
-![expansion_workflow_about.svg](https://github.com/raimondilab/expansion/blob/main/expansion_workflow_about.svg)
+
