@@ -6,12 +6,17 @@ Explore the functional implications of protein-coding alternative splice variant
 
 ## Structure of this Repository
 There are two main folders: 
+
 1. '/data' containing the datasets, necessary input and output files categorized in different subfolders.
+
 2. '/scripts' containing the codes used in development of EXPANSION.
 
 ## This is the pipeline with a brief description of codes and data used:
+
 **1. gene_list.txt:** the list of protein coding genes from [HGNC](https://www.genenames.org/download/statistics-and-files/) 
+
 **2. tx_ensembldb.R:** R script intended to retrieve information about protein-coding transcripts for a given gene symbol using the Ensembl database and the AnnotationHub package. It then processes the retrieved data and saves it to a specified output file (/data/res_transcripts).
+
 **3. fasta.sh:** The provided script is a Bash script designed to process a list of gene symbols from a text file (gene_list.txt), create FASTA format entries from associated data in CSV files (obtained from step-2), and save the resulting sequences in separate FASTA files (/data/fasta). The script utilizes awk as follows:
 ```
 awk -F '\t' '{if($1 !~ "symbol")printf(">%s_%s_%s\n%s\n", $1,$2,$3,$4)}'  /data/res_transcripts/<gene_symbol>_transcripts.csv  | sed 's/"//g' > /data/fasta/<gene_symbol>.fa
